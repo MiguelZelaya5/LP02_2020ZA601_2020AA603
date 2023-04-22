@@ -21,20 +21,20 @@ namespace LP02_2020ZA601_2020AA603.Controllers
         // GET: clientes
         public async Task<IActionResult> Index()
         {
-              return _context.marcas != null ? 
-                          View(await _context.marcas.ToListAsync()) :
-                          Problem("Entity set 'restauranteDBContext.marcas'  is null.");
+              return _context.clientes != null ? 
+                          View(await _context.clientes.ToListAsync()) :
+                          Problem("Entity set 'restauranteDBContext.clientes'  is null.");
         }
 
         // GET: clientes/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.marcas == null)
+            if (id == null || _context.clientes == null)
             {
                 return NotFound();
             }
 
-            var clientes = await _context.marcas
+            var clientes = await _context.clientes
                 .FirstOrDefaultAsync(m => m.clienteId == id);
             if (clientes == null)
             {
@@ -69,12 +69,12 @@ namespace LP02_2020ZA601_2020AA603.Controllers
         // GET: clientes/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.marcas == null)
+            if (id == null || _context.clientes == null)
             {
                 return NotFound();
             }
 
-            var clientes = await _context.marcas.FindAsync(id);
+            var clientes = await _context.clientes.FindAsync(id);
             if (clientes == null)
             {
                 return NotFound();
@@ -120,12 +120,12 @@ namespace LP02_2020ZA601_2020AA603.Controllers
         // GET: clientes/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.marcas == null)
+            if (id == null || _context.clientes == null)
             {
                 return NotFound();
             }
 
-            var clientes = await _context.marcas
+            var clientes = await _context.clientes
                 .FirstOrDefaultAsync(m => m.clienteId == id);
             if (clientes == null)
             {
@@ -140,14 +140,14 @@ namespace LP02_2020ZA601_2020AA603.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.marcas == null)
+            if (_context.clientes == null)
             {
-                return Problem("Entity set 'restauranteDBContext.marcas'  is null.");
+                return Problem("Entity set 'restauranteDBContext.clientes'  is null.");
             }
-            var clientes = await _context.marcas.FindAsync(id);
+            var clientes = await _context.clientes.FindAsync(id);
             if (clientes != null)
             {
-                _context.marcas.Remove(clientes);
+                _context.clientes.Remove(clientes);
             }
             
             await _context.SaveChangesAsync();
@@ -156,7 +156,7 @@ namespace LP02_2020ZA601_2020AA603.Controllers
 
         private bool clientesExists(int id)
         {
-          return (_context.marcas?.Any(e => e.clienteId == id)).GetValueOrDefault();
+          return (_context.clientes?.Any(e => e.clienteId == id)).GetValueOrDefault();
         }
     }
 }
