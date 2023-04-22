@@ -8,7 +8,7 @@ builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 builder.Services.AddDbContext<restauranteDBContext>(opt =>
-    opt.UseSqlServer(builder.Configuration.GetConnectionString("equiposDbConnection")));
+    opt.UseSqlServer(builder.Configuration.GetConnectionString("restauranteDbConnection")));
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
