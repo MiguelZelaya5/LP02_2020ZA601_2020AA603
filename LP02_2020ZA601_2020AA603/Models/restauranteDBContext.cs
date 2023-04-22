@@ -7,5 +7,10 @@ namespace LP02_2020ZA601_2020AA603.Models
         {
 
         }
+        public DbSet<pedidos>? pedidos { get; set; }
+        public DbSet<platos>? platos { get; set; }
+
+        public DbSet<motoristas>? motoristas { get; set; }
+        public DbSet<clientes>? marcas { get; set; }
     }
 }
