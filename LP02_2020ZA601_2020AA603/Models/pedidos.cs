@@ -15,7 +15,7 @@ namespace LP02_2020ZA601_2020AA603.Models
         [Display(Name = "Cantidad")]
         public int? cantidad { get; set; }
         [Display(Name = "Precio")]
-        public double? precio { get; set; }
+        public decimal? precio { get; set; }
 
 
     }

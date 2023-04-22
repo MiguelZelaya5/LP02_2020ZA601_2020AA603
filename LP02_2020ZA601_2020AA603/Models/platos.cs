@@ -9,6 +9,6 @@ namespace LP02_2020ZA601_2020AA603.Models
         [Display(Name = "Nombre del plato")]
         public string? nombrePlato { get; set; }
         [Display(Name = "Precio")]
-        public double precio { get; set; }
+        public decimal? precio { get; set; }
     }
 }
