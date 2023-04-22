@@ -1,9 +1,14 @@
+using LP02_2020ZA601_2020AA603.Models;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
+builder.Services.AddDbContext<restauranteDBContext>(opt =>
+    opt.UseSqlServer(builder.Configuration.GetConnectionString("equiposDbConnection")));
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
