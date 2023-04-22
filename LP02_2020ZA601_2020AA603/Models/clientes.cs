@@ -6,7 +6,7 @@ namespace LP02_2020ZA601_2020AA603.Models
     {
         [Key]
         public int clienteId { get; set; }
-        public string nombreCliente { get; set; }
-        public string direccion { get; set; }
+        public string? nombreCliente { get; set; }
+        public string? direccion { get; set; }
     }
 }
